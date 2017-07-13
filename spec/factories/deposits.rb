@@ -1,0 +1,6 @@
+FactoryGirl.define do
+  factory :deposit do
+    user
+    amount { Money.new(rand(1000..10000)) }
+  end
+end
