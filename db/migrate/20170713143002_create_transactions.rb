@@ -4,7 +4,7 @@ class CreateTransactions < ActiveRecord::Migration[5.1]
       t.references :user
       t.references :gateway
       t.monetize :amount
-      t.integer :status, default: 0
+      t.integer :direction, default: 0
       t.string :comment
 
       t.timestamps

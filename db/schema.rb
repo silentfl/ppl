@@ -35,7 +35,9 @@ ActiveRecord::Schema.define(version: 20170713143002) do
   create_table "transactions", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "gateway_id"
-    t.integer "status", default: 0
+    t.integer "amount_cents", default: 0, null: false
+    t.string "amount_currency", default: "RUB", null: false
+    t.integer "direction", default: 0
     t.string "comment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
