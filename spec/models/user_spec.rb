@@ -23,4 +23,9 @@ RSpec.describe User, type: :model do
     it { expect(subject.fullname).to match(/#{subject.firstname}/) }
     it { expect(subject.fullname).to match(/#{subject.middlename}$/) }
   end
+
+  describe :admin do
+    subject { build(:user, admin: true) }
+    it { expect(subject.admin?).to eq(true) }
+  end
 end
