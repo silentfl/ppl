@@ -37,5 +37,3 @@ end
     amount: Money.new(rand(100) * 100)
   )
 end
-
-User.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
