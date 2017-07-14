@@ -16,6 +16,6 @@ RSpec.describe PaymentController, type: :controller do
     subject { post :create, params: params }
 
     it { expect(response).to have_http_status(:success) }
-    it { expect{subject}.to change{Deposit.find(deposit.id).amount}.by(Money.new(1000)) }
+    it { expect { subject }.to change { Deposit.find(deposit.id).amount }.by(Money.new(1000)) }
   end
 end

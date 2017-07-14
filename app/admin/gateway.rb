@@ -13,7 +13,7 @@ ActiveAdmin.register Gateway do
   filter :created_at
 
   form do |f|
-    f.inputs "Gateway Details" do
+    f.inputs 'Gateway Details' do
       f.input :name
     end
     f.actions

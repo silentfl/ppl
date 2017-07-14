@@ -14,7 +14,7 @@ ActiveAdmin.register Deposit do
   filter :created_at
 
   form do |f|
-    f.inputs "Deposit Details" do
+    f.inputs 'Deposit Details' do
       f.input :user, as: :select, collection: User.all.map(&:email)
       f.input :amount
     end

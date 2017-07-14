@@ -4,10 +4,7 @@ ActiveAdmin.register Transaction do
   index do
     selectable_column
     id_column
-    column :deposit do |deposit|
-      link_to deposit.id, admin_deposit_path(deposit)
-    end
-    #column :deposit { |deposit| deposit.user.email }
+    column :deposit { |deposit| link_to deposit.id, admin_deposit_path(deposit) }
     column :gateway
     column :direction
     column :amount
@@ -24,7 +21,7 @@ ActiveAdmin.register Transaction do
   filter :created_at
 
   form do |f|
-    f.inputs "Transaction Details" do
+    f.inputs 'Transaction Details' do
       f.input :amount
       f.input :deposit
       f.input :gateway
