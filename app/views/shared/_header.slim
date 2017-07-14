@@ -1,0 +1,14 @@
+nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      .navbar-brand PayPal
+
+    .collapse.navbar-collapse
+      ul.nav.navbar-nav
+        li.active = link_to 'Code', github_path
+
+      .navbar-text.navbar-right
+        - if current_user
+          = link_to 'Sign out', destroy_user_session_path
+        - else
+          = link_to 'Sign in', user_session_path
