@@ -29,10 +29,6 @@ class PaymentController < ApplicationController
     params[:amount] = Money.new(params[:amount])
   end
 
-  def transaction_params
-    params.permit(:direction, :amount)
-  end
-
   def check_token
     @gateway = Gateway.find_by(access_token: params[:access_token])
 
