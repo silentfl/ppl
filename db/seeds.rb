@@ -1,3 +1,4 @@
+require 'faker'
 password = '12345678'
 
 # users
