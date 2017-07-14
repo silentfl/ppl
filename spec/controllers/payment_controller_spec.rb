@@ -6,10 +6,10 @@ RSpec.describe PaymentController, type: :controller do
     let(:gateway) { create(:gateway) }
     let(:params) do
       {
-        :id => deposit.id,
-        :access_token => gateway.access_token,
-        :direction => rand(0..1),
-        :amount =>1000
+        deposit_id: deposit.id,
+        access_token: gateway.access_token,
+        direction: rand(0..1),
+        amount: 1000
       }
     end
 
