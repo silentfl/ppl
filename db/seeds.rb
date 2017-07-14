@@ -19,7 +19,8 @@ admin = User.create!(
     password:  password,
     firstname: firstname,
     lastname: Faker::Name.last_name,
-    middlename: Faker::Name.title
+    middlename: Faker::Name.title,
+    deposit: Deposit.create
   )
 end
 
@@ -30,7 +31,7 @@ end
 30.times do
   Transaction.create!(
     gateway: Gateway.offset(rand(Gateway.count)).first,
-    user: User.offset(rand(User.count)).first,
+    deposit: Deposit.offset(rand(Deposit.count)).first,
     direction: rand(0..1),
     amount: Money.new(rand(100) * 100)
   )
