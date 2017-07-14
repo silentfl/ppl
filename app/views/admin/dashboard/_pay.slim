@@ -1,0 +1,7 @@
+= semantic_form_for :payment, url: payment_index_path do |f|
+  = f.input :deposit, input_html: { name: 'deposit_id' }, as: :select, collection: Deposit.all.map(&:id)
+  = f.input :gateway, input_html: { name: 'access_token' }, as: :select, collection: Gateway.all.map{ |g| [g.name, g.access_token] }
+  = f.input :direction, input_html: { name: 'direction' }, as: :select, collection: Transaction.directions
+  = f.input :amount, input_html: { name: 'amount', style: 'width: 100px' }
+  = f.text_field :comment, input_html: { name: 'comment' }
+  = f.actions :submit
